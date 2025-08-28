@@ -3,7 +3,7 @@ name: Run Tests
 on: [push]
 jobs:
   test:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -12,11 +12,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version:'14'
+          node-version: 18
 
       - name: install dependencies
         run: npm install
 
-      - name: Run testests
+      - name: Run tests
         run:  npx jest
 
